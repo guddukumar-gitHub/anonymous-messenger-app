@@ -7,7 +7,7 @@ export interface IMessage extends Document {
 
 const MessageSchema: Schema<IMessage> = new Schema({
   content: { type: String, required: true },
-  createdAt: { type: Date, required: true, default: Date.now }
+  createdAt: { type: Date, required: true, default: Date.now },
 });
 
 export interface IUser extends Document {
@@ -56,6 +56,8 @@ const UserSchema: Schema<IUser> = new Schema({
   },
 });
 
-export const UserModel = (mongoose.models.User as mongoose.Model<IUser>) || mongoose.model<IUser>("User", UserSchema);
+export const UserModel =
+  (mongoose.models.User as mongoose.Model<IUser>) ||
+  mongoose.model<IUser>("User", UserSchema);
 
 export default UserModel;
