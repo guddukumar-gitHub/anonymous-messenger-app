@@ -23,8 +23,8 @@ export async function POST(request: Request) {
 
     if (isCodeValid && isCodeNotExpired) {
       // Update the user's verification status
-      user.isVerified = true;
-      await user.save();
+      // user.isVerified = true;
+      await user.updateOne({ isVerified: true });
 
       return Response.json(
         { success: true, message: 'Account verified successfully' },

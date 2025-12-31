@@ -66,36 +66,10 @@ const page = () => {
       checkUsernameAvailability();
     }, [username]);
 
-//   useEffect(() => {
-//     const checkUsernameUnique = async () => {
-//       if (username) {
-//         setIsCheckingUsername(true);
-//         setUsernameMessage(''); // Reset message
-//         try {
-//           const response = await axios.get<ApiResponse>(
-//             `/api/check-username-unique?username=${username}`
-//           );
-//           let message = response.data.message;
-//           setUsernameMessage(message);
-//         } catch (error) {
-//           const axiosError = error as AxiosError<ApiResponse>;
-//           setUsernameMessage(
-//             axiosError.response?.data.message ?? 'Error checking username'
-//           );
-//         } finally {
-//           setIsCheckingUsername(false);
-//         }
-//       }
-//     };
-//     checkUsernameUnique();
-//   }, [username]);
-
   const onSubmit = async (data: z.infer<typeof signUpSchema>) => {
     setIsSubmitting(true);
     try {
       const response = await axios.post<ApiResponse>("/api/sign-up", data);
-      // just to verify toast is working
-      console.log(toast);
       toast.success(response.data.message, {
         duration: 4000,
       });

@@ -1,3 +1,5 @@
 import {z} from 'zod';
 
-export const acceptingMessagesSchemaValidation = z.boolean();
+export const acceptingMessagesSchemaValidation = z.object({
+  isAcceptingMessages: z.boolean(),
+});

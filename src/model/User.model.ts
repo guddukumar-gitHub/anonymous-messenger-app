@@ -46,6 +46,10 @@ const UserSchema: Schema<IUser> = new Schema({
     type: Date,
     required: [true, "Verify code expiry is required"],
   },
+   isVerified: {
+    type: Boolean,
+    default: false,
+  },
   isAcceptingMessages: {
     type: Boolean,
     default: true,
