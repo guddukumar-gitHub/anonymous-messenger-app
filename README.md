@@ -33,8 +33,6 @@ This project is built to showcase **real-world Next.js full-stack development sk
 
 ## 🖼️ Screenshots
 
-> Create a folder named `screenshots/` in the project root and add the images.
-
 ### Home Page
 ![Home Page](./screenshots/home.png)
 
@@ -87,20 +85,31 @@ This project is built to showcase **real-world Next.js full-stack development sk
 ## 📂 Project Structure (Simplified)
 ```file-structure
 ghostwire/
-├── app/
-│ ├── api/
-│ │ ├── auth/
-│ │ └── suggest-messages/
-│ ├── dashboard/
-│ ├── (auth)/
-│ └── page.tsx
-├── components/
-├── lib/
-├── models/
-├── public/
-├── screenshots/
+├── emails/ # Email templates
+├── src/
+│ ├── app/ # Next.js App Router
+│ │ ├── (app)/ # Protected application routes
+│ │ │ └── dashboard/ # User dashboard
+│ │ ├── (auth)/ # Authentication routes
+│ │ │ ├── sign-in/
+│ │ │ ├── sign-up/
+│ │ │ └── verify/
+│ │ ├── api/ # Backend API routes
+│ │ ├── about/ # Static pages
+│ │ ├── u/[username]/ # Public anonymous message page
+│ │ ├── layout.tsx
+│ │ └── page.tsx
+│ ├── components/ # Reusable UI components
+│ ├── hooks/ # Custom React hooks
+│ ├── helpers/ # Helper functions
+│ ├── lib/ # Database & utility logic
+│ ├── models/ # Mongoose schemas
+│ ├── schemas/ # Zod validation schemas
+│ ├── types/ # TypeScript types
+│ └── screenshots/ # README screenshots
 ├── package.json
 └── README.md
+
 ```
 ---
 
