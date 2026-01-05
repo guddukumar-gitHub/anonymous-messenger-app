@@ -1,90 +1,177 @@
-# Anonymous Messenger App
+# 👻 GhostWire – An Anonymous Messenger App
 
-A minimal anonymous messaging app frontend built with Next.js and Tailwind CSS. The app lets users send and browse short anonymous messages and includes a user dashboard (authenticated) for message management.
+GhostWire is a **full-stack anonymous messaging web application** that allows users to send and receive messages without revealing their identity.  
+It is designed with a **privacy-first approach**, modern UI, secure authentication, and **AI-powered message suggestions**.
 
-## Features
-- Send anonymous messages
-- Suggest message text using an AI assistant
-- Optional email notifications via Resend
-- User dashboard with authentication (NextAuth)
-- Responsive UI with Tailwind CSS
+This project is built to showcase **real-world Next.js full-stack development skills** for internships and junior developer roles.
 
-## Tech Stack
-- Framework: Next.js 16
-- UI: Tailwind CSS
-- Language: TypeScript
-- Validation: Zod
-- Database: MongoDB (for persisting messages and users)
-- Email delivery: Resend
-- Authentication: next-auth (user dashboard)
-- Forms: react-hook-form
-- AI: OpenAI (or other provider) for suggested messages
+---
 
-## Prerequisites
-- Node.js 18 or newer
-- npm or pnpm
+## 🌐 Live Demo
 
-## Install
-Install dependencies used by this project (example):
+🔗 **Live URL:** https://ghost-wire.vercel.app  
 
+🔗 **Anonymous Message Link Format:**
+- URL: https://ghost-wire.vercel.app/u/{username}
+- Anyone with your link can send you anonymous messages — no login required.
+
+---
+
+## ✨ Features
+
+- 🔒 Anonymous messaging (no sender identity stored)
+- 🔗 Shareable public profile link
+- 🤖 AI-powered message suggestions
+- 🔐 Secure authentication using NextAuth
+- 📬 Email notifications for new messages
+- 🌗 Light / Dark theme support
+- 📊 User dashboard for message management
+- 🛡️ Toggle message acceptance (privacy control)
+- 📱 Fully responsive UI
+
+---
+
+## 🖼️ Screenshots
+
+> Create a folder named `screenshots/` in the project root and add the images.
+
+### Home Page
+![Home Page](./screenshots/home.png)
+
+### Sign Up Page
+![Sign Up](./screenshots/signup.png)
+
+### Sign In Page
+![Sign In](./screenshots/signin.png)
+
+### About Page
+![About](./screenshots/about.png)
+
+### Anonymous Message Card
+![Message Card](./screenshots/message-card.png)
+
+### User Dashboard
+![Dashboard](./screenshots/dashboard.png)
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- Next.js 16 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS v4
+- Radix UI
+- Lucide Icons
+- Sonner (toast notifications)
+
+### Backend
+- Next.js API Routes
+- MongoDB
+- Mongoose
+- NextAuth.js
+- bcryptjs (password hashing)
+
+### AI & Utilities
+- AI SDK (`ai`)
+- `@ai-sdk/openai`
+- `@ai-sdk/react`
+- Zod (schema validation)
+- React Hook Form
+- Axios
+- Resend (email service)
+
+---
+
+## 📂 Project Structure (Simplified)
+```file-structure
+ghostwire/
+├── app/
+│ ├── api/
+│ │ ├── auth/
+│ │ └── suggest-messages/
+│ ├── dashboard/
+│ ├── (auth)/
+│ └── page.tsx
+├── components/
+├── lib/
+├── models/
+├── public/
+├── screenshots/
+├── package.json
+└── README.md
+```
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the Repository
 ```bash
-npm install zod mongodb next-auth react-hook-form resend openai
+git clone https://github.com/your-username/ghostwire.git
+cd ghostwire
+```
+### 2️⃣ Install Dependencies 
+```bash
+pnpm install
 ```
 
-Install project dependencies as usual:
+### 3️⃣ Environment Variables
+```.env
+MONGODB_URI=your_mongodb_connection_string
+NEXTAUTH_SECRET=your_nextauth_secret
+NEXTAUTH_URL=http://localhost:3000
 
-```bash
-npm install
+OPENAI_API_KEY=your_openai_api_key
+RESEND_API_KEY=your_resend_api_key
+EMAIL_FROM=no-reply@ghostwire.com
 ```
 
-## Development
-Run the development server:
-
+### 4️⃣ Run the Development Server
 ```bash
-npm run dev
+pnpm dev
 ```
-
 Open http://localhost:3000 in your browser.
 
-## Build
-Create an optimized production build and start the server:
+---
 
-```bash
-npm run build
-npm run start
-```
+## 🤖 AI Message Suggestions
 
-## Scripts
-- `dev`: starts Next.js dev server
-- `build`: builds the app for production
-- `start`: starts the production server
-- `lint`: run ESLint
+GhostWire uses the AI SDK to generate helpful and friendly anonymous message suggestions.
+All AI logic runs on server-side API routes, ensuring API keys remain secure.
 
-## Environment
-Create a `.env.local` at the project root with required secrets. Example variables used by this project:
+---
 
-```
-MONGODB_URI=mongodb+srv://<user>:<password>@cluster0.mongodb.net/anonymous-messenger?retryWrites=true&w=majority
-NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET=your_nextauth_secret
-RESEND_API_KEY=rv_xxx
-OPENAI_API_KEY=sk-xxx
-NEXT_PUBLIC_API_URL=http://localhost:3000/api
-```
+## 🔐 Authentication & Security
 
-- Replace placeholders with your real credentials.
-- Keep `.env.local` out of source control.
+- Session-based authentication with NextAuth.js
+- Passwords hashed using bcryptjs
+- Protected dashboard routes
+- No sender identity stored for anonymous messages
 
-## Notes on integration
-- Zod: use for schema validation server-side and client-side form validation.
-- MongoDB: use the official `mongodb` driver or an ORM/ODM (e.g., Prisma, Mongoose) to store messages and user records.
-- Resend: used for transactional email delivery (e.g., notifications). Store `RESEND_API_KEY` securely.
-- next-auth: configure a provider and session strategy for the dashboard pages.
-- react-hook-form: use with Zod resolver for fast, type-safe forms.
-- AI suggestions: wire your AI provider (OpenAI or other) to generate suggested message text; protect API keys on server-side routes.
+---
 
-## Contributing
-Contributions welcome — open an issue or submit a pull request. Please include tests or screenshots for UI changes.
+## 🎯 Why GhostWire?
 
-## License
-Add a license if you plan to open-source this project (for example, MIT).
+GhostWire is built for people who want to express thoughts, feedback, or confessions freely — without social pressure.
+It prioritizes privacy, simplicity, and honest communication.
+
+---
+
+## 📈 Future Improvements
+
+- Spam and abuse protection
+- Rate limiting
+- Message analytics
+- Profile customization
+- Progressive Web App (PWA) support
+
+---
+
+## 👨‍💻 Author
+
+Guddu Kumar
+
+MERN Stack Developer | Next.js Developer | Software Enthusiast
+
+Focused on building secure, scalable, and modern web applications.
