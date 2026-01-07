@@ -34,22 +34,22 @@ This project is built to showcase **real-world Next.js full-stack development sk
 ## 🖼️ Screenshots
 
 ### Home Page
-![Home Page](./screenshots/home.png)
+![Home Page](./screenshots/home_page_desktop.png)
 
 ### Sign Up Page
-![Sign Up](./screenshots/signup.png)
+![Sign Up](./screenshots/signup_page_desktop.png)
 
 ### Sign In Page
-![Sign In](./screenshots/signin.png)
+![Sign In](./screenshots/signin_page_desktop.png)
 
 ### About Page
-![About](./screenshots/about.png)
+![About](./screenshots/about_desktop.png)
 
-### Anonymous Message Card
-![Message Card](./screenshots/message-card.png)
+### Public Profile Page
+![Message Card](./screenshots/public_profile_page_desktop.png)
 
 ### User Dashboard
-![Dashboard](./screenshots/dashboard.png)
+![Dashboard](./screenshots/user_dashboard_page_desktop.png)
 
 ---
 
